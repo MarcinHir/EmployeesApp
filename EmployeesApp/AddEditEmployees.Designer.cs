@@ -113,6 +113,7 @@
             // 
             // tbId
             // 
+            this.tbId.Enabled = false;
             this.tbId.Location = new System.Drawing.Point(132, 13);
             this.tbId.Name = "tbId";
             this.tbId.Size = new System.Drawing.Size(196, 22);
@@ -149,8 +150,11 @@
             // 
             // dtpStartingWork
             // 
+            this.dtpStartingWork.CustomFormat = "dd/MM/yyyy";
+            this.dtpStartingWork.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpStartingWork.Location = new System.Drawing.Point(132, 184);
             this.dtpStartingWork.Name = "dtpStartingWork";
+            this.dtpStartingWork.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dtpStartingWork.Size = new System.Drawing.Size(196, 22);
             this.dtpStartingWork.TabIndex = 12;
             // 
@@ -183,6 +187,7 @@
             this.Controls.Add(this.lbFirstName);
             this.Controls.Add(this.lbId);
             this.Name = "AddEditEmployees";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddEditEmployees";
             this.ResumeLayout(false);
             this.PerformLayout();

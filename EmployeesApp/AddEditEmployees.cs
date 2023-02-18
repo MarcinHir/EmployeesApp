@@ -15,6 +15,7 @@ namespace EmployeesApp
 
         private int _employeeId;
         private Employee _employee;
+        private DateTime ?_EndOfWorking;
 
         private FileHelper<List<Employee>> _fileHelper =
             new FileHelper<List<Employee>>(Program.FilePath);
@@ -50,7 +51,8 @@ namespace EmployeesApp
             tbLastName.Text = _employee.LastName;
             tbSalary.Text = _employee.Salary.ToString();
             tbComments.Text = _employee.Comments;
-            dtpStartingWork.Text = _employee.StartingWorkingTime.ToString();          
+            dtpStartingWork.Text = _employee.StartingWorkingTime.ToString();
+            _EndOfWorking = _employee.EndOfWorkingTime;
         }
 
         private void AddNewEmployeeToList(List<Employee> employees)
@@ -63,13 +65,11 @@ namespace EmployeesApp
                 Comments = tbComments.Text,
                 Salary = Convert.ToDouble(tbSalary.Text),
                 StartingWorkingTime = dtpStartingWork.Value,
-                EndOfWorkingTime = null
-                
+                EndOfWorkingTime = _EndOfWorking
             };
 
             employees.Add(employee);
         }
-
         private void AssignIdToNewEmployee(List<Employee> employees)
         {
             var employeeWithHigestId = employees.

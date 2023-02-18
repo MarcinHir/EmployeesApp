@@ -28,14 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
+            
             this.btnAddEmployee = new System.Windows.Forms.Button();
             this.btnEditEmployee = new System.Windows.Forms.Button();
             this.btnFireEmployee = new System.Windows.Forms.Button();
-            this.dgvEmployees = new System.Windows.Forms.DataGridView();
             this.cbIsWorking = new System.Windows.Forms.ComboBox();
             this.lbWorking = new System.Windows.Forms.Label();
+            this.dgvEmployees = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dgvEmployees
+            // 
+            this.dgvEmployees.AllowUserToOrderColumns = true;
+            this.dgvEmployees.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvEmployees.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvEmployees.BackgroundColor = System.Drawing.SystemColors.HighlightText;
+            this.dgvEmployees.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmployees.Location = new System.Drawing.Point(202, 13);
+            this.dgvEmployees.Name = "dgvEmployees";
+            this.dgvEmployees.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvEmployees.RowHeadersVisible = false;
+            this.dgvEmployees.RowHeadersWidth = 51;
+            this.dgvEmployees.RowTemplate.Height = 24;
+            this.dgvEmployees.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEmployees.Size = new System.Drawing.Size(1018, 425);
+            this.dgvEmployees.TabIndex = 4;
+            this.dgvEmployees.MultiSelect = false;
+            this.dgvEmployees.ReadOnly = true;
+            this.dgvEmployees.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEmployees.AllowUserToResizeColumns = false;
+            this.dgvEmployees.AllowUserToResizeRows = false;
             // 
             // btnAddEmployee
             // 
@@ -73,24 +99,18 @@
             this.btnFireEmployee.UseVisualStyleBackColor = false;
             this.btnFireEmployee.Click += new System.EventHandler(this.btnFireEmployee_Click);
             // 
-            // dgvEmployees
-            // 
-            this.dgvEmployees.BackgroundColor = System.Drawing.SystemColors.HighlightText;
-            this.dgvEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmployees.Location = new System.Drawing.Point(202, 13);
-            this.dgvEmployees.Name = "dgvEmployees";
-            this.dgvEmployees.RowHeadersWidth = 51;
-            this.dgvEmployees.RowTemplate.Height = 24;
-            this.dgvEmployees.Size = new System.Drawing.Size(1018, 425);
-            this.dgvEmployees.TabIndex = 4;
-            // 
             // cbIsWorking
             // 
             this.cbIsWorking.FormattingEnabled = true;
+            this.cbIsWorking.Items.AddRange(new object[] {
+            "Wszyscy",
+            "Zatrudnieni",
+            "Zwolnieni"});
             this.cbIsWorking.Location = new System.Drawing.Point(13, 184);
             this.cbIsWorking.Name = "cbIsWorking";
             this.cbIsWorking.Size = new System.Drawing.Size(183, 24);
             this.cbIsWorking.TabIndex = 5;
+            this.cbIsWorking.SelectedIndexChanged += new System.EventHandler(this.cbIsWorking_SelectedIndexChanged);
             // 
             // lbWorking
             // 
@@ -114,6 +134,7 @@
             this.Controls.Add(this.btnEditEmployee);
             this.Controls.Add(this.btnAddEmployee);
             this.Name = "Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "System Kadrowy";
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).EndInit();
             this.ResumeLayout(false);
